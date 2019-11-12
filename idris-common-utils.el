@@ -72,7 +72,13 @@ Lisp package.")
               ((bufferp buffer)
                buffer)
               (t (message "don't know how to kill buffer")))))
-    (when (and buf (buffer-live-p buf)) (kill-buffer buf))))
+    (when
+        (and buf (buffer-live-p buf))
+        (with-current-buffer
+            buf
+            ((setq buffer-read-only nil)
+             (erase-buffer))
+        ))))
 
 (defun idris-minibuffer-respecting-message (text &rest args)
   "Display TEXT as a message, without hiding any minibuffer contents."

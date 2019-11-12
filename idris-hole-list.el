@@ -100,7 +100,8 @@ Invoces `idris-hole-list-mode-hook'."
       (message "Press q to close")
       (setq buffer-read-only t)
       (goto-char (point-min)))
-    (display-buffer (idris-hole-list-buffer))))
+    ))
+
 
 (defun idris-hole-tree-printer (tree)
   "Print TREE, formatted for holes."

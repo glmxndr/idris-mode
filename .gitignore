@@ -3,3 +3,6 @@
 documentation.aux
 documentation.log
 documentation.pdf
+idris-mode-autoloads.el
+idris-mode-pkg.el
+
